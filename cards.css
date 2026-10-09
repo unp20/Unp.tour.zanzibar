@@ -1,0 +1,274 @@
+/* ============================================================
+   UNP TOURS — KADI.CSS
+   Cards zote (Kama Apple Style)
+   ============================================================ */
+
+/* ============================================================
+   1. KADI — MSINGI
+   ============================================================ */
+.kadi {
+  background-color: var(--gray-dark);
+  border: 2px solid var(--gray);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: var(--transition-base);
+  position: relative;
+}
+
+.kadi:hover {
+  transform: translateY(-5px);
+  border-color: var(--blue-ocean);
+  box-shadow: 0 15px 40px rgba(0, 119, 190, 0.4);
+}
+
+/* ============================================================
+   2. KADI — PICHA (Apple Style)
+   ============================================================ */
+.kadi-image {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.kadi-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  transition: transform 0.6s ease;
+}
+
+.kadi-image:hover img {
+  transform: scale(1.08);
+}
+
+.kadi-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.9) 100%
+  );
+  z-index: 2;
+}
+
+.kadi-image .kadi-body {
+  position: relative;
+  z-index: 3;
+  padding: var(--space-lg);
+}
+
+/* ============================================================
+   3. KADI — BODY + TITLE + TEXT
+   ============================================================ */
+.kadi-body {
+  padding: var(--space-lg);
+}
+
+.kadi-title {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.3px;
+}
+
+.kadi-title a {
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.kadi-title a:hover {
+  color: var(--gold);
+}
+
+.kadi-text {
+  color: var(--gray-light);
+  font-size: var(--fs-sm);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.kadi-image .kadi-text {
+  color: #d1d5db;
+}
+
+/* ============================================================
+   4. KADI — VARIANTS
+   ============================================================ */
+
+/* ---------- Gold ---------- */
+.kadi-gold {
+  border-color: var(--gold);
+}
+
+.kadi-gold:hover {
+  border-color: var(--gold-light);
+  box-shadow: 0 15px 40px rgba(212, 160, 23, 0.4);
+}
+
+/* ---------- Flat ---------- */
+.kadi-flat {
+  box-shadow: none;
+}
+
+.kadi-flat:hover {
+  transform: none;
+  border-color: var(--gold);
+}
+
+/* ---------- Horizontal ---------- */
+.kadi-horizontal {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.kadi-horizontal img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  position: static;
+}
+
+/* ---------- Featured ---------- */
+.kadi-featured {
+  min-height: 500px;
+}
+
+.kadi-featured .kadi-body {
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+.kadi-featured .kadi-title {
+  font-size: var(--fs-2xl);
+}
+
+/* ============================================================
+   5. KADI — ICON + META
+   ============================================================ */
+.kadi-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  border-radius: var(--radius-circle);
+  background: rgba(0, 119, 190, 0.2);
+  color: var(--blue-ocean);
+  margin-bottom: var(--space-md);
+}
+
+.kadi-icon.gold {
+  background: rgba(212, 160, 23, 0.2);
+  color: var(--gold);
+}
+
+.kadi-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  font-size: var(--fs-sm);
+  color: var(--gray-muted);
+}
+
+.kadi-meta-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* ============================================================
+   6. KADI — GRID LAYOUTS
+   ============================================================ */
+.kadi-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 600px) {
+  .kadi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .kadi-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.kadi-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 600px) {
+  .kadi-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.kadi-grid-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 600px) {
+  .kadi-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .kadi-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ============================================================
+   7. RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+  .kadi-image {
+    min-height: 280px;
+  }
+  .kadi-featured {
+    min-height: 400px;
+  }
+  .kadi-horizontal {
+    grid-template-columns: 1fr;
+  }
+  .kadi-horizontal img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kadi-body {
+    padding: var(--space-md);
+  }
+  .kadi-title {
+    font-size: var(--fs-base);
+  }
+  .kadi-image {
+    min-height: 240px;
+  }
+}
